@@ -81,23 +81,20 @@ ask() {
 # Change the wlp2s0 interface MAC Address
 change_mac() {
         case $1 in
-        "start")
-                echo "Cambiando la direccion MAC"
-                sudo ifconfig wlp2s0 down
-                sudo service network-manager stop
-                sudo macchanger -a wlp2s0
-                sudo service network-manager restart
-                ;;
-        "stop")
-                echo "Reestableciendo la direccion MAC"
-                sudo ifconfig wlp2s0 down
-                sudo service network-manager stop
-                sudo macchanger -p wlp2s0
-                sudo service network-manager restart
-                ;;
-        *)
-                echo "Opciones: start|stop"
-                ;;
+             "start")
+                	echo "Cambiando la direccion MAC"
+                	sudo ifconfig wlp2s0 down
+                	sudo service network-manager stop
+	                sudo macchanger -a wlp2s0
+			sudo service network-manager restart
+              ;;
+              "stop")
+                	echo "Reestableciendo la direccion MAC"
+                	sudo ifconfig wlp2s0 down
+                	sudo service network-manager stop
+                	sudo macchanger -p wlp2s0
+                	sudo service network-manager restart
+              ;;
         esac
 }
 
